@@ -1,19 +1,8 @@
 const router = require('express').Router();
+const users = require('../../model/modelUsers');
 
-router.get('/', async (req, res)=> {
-    try {
-        res.status(200).send(`wesh nickel !!!`)
-    } catch {
-        res.status(200).send(`OOPS`)
-    }
-})
+router.get('/', users.coucou);
 
-router.get('/unique', async (req, res) =>  {
-  try {
-    res.status(200).send('Only one can survive !')
-  }  catch {
-    res.status(200).send(`OOPS`)
-}
-})
+router.get('/unique', users.unique);
 
 module.exports = router;
